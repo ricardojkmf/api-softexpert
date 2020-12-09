@@ -48,4 +48,3 @@ CREATE TABLE cadastro (
     last_name VARCHAR(255) NOT NULL,
     age INTEGER NOT NULL
 );
------------------------------

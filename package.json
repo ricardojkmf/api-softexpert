@@ -4,11 +4,11 @@
   "description": "DesafioSoftExpert",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "repository": {
     "type": "git",
-    "url": "https://messias.git"
+    "url": "https://github.com/ricardojkmf/api-softexpert"
   },
   "author": "Ricardo Messias Ferreira",
   "license": "ISC",

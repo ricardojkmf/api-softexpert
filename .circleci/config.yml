@@ -11,7 +11,7 @@ jobs:
   build:
     machine: true
 
-    working_director: .
+    working_directory: .
 
     steps:
       -checkout
@@ -24,4 +24,4 @@ jobs:
         name: Push to DockerHub
         command: |
           docker login -u $DOCKERHUB_LOGIN -p $DOCKERHUB_PASSWORD
-          docker push ricardomessiasferreira/api-softexpert:v2
+          docker push ricardomessiasferreira/api-softexpert:v$CIRCLE_BUILD_NUM

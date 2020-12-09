@@ -2,10 +2,10 @@ version: 2.0
 jobs:
   build:
     docker:
-      - image: cimg/ruby:2.7.1-node
-        auth:
-          username: $DOCKERHUB_LOGIN
-          password: $DOCKERHUB_PASSWORD 
+      - image: circleci/buildpack-deps:stretch
+#        auth:
+#          username: $DOCKERHUB_LOGIN
+#          password: $DOCKERHUB_PASSWORD 
 
     steps:
       - checkout

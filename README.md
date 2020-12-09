@@ -17,7 +17,7 @@ REQUISITOS
 - Ao término do desafio deve passar uma documentação descrevendo os acessos para as ferramentas utilizadas e um descritivo de como executar o código.
 
 -----------------------------
-SEQUENCIA DO PROJETOS
+SEQUENCIA DO PROJETO
 -----------------------------
 npm init
 

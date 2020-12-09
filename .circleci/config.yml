@@ -1,27 +1,21 @@
-#version: 2.1
-#orbs:
-# node: circleci/node@3.0.0
-#workflows:
-#  node-tests:
-#    jobs:
-#      - node/test
-#
-version: 2
+version: 2.0
 jobs:
   build:
-    machine: true
-
-    working_directory: .
+    docker:
+      - image: cimg/ruby:2.7.1-node
+        auth:
+          username: $DOCKERHUB_LOGIN
+          password: $DOCKERHUB_PASSWORD 
 
     steps:
       -checkout
 
       -run:
         name: Build Docker Image
-        command: docker build -t ricardomessiasferreira/api-softexpert:v2 .
+        command: docker build -t $DOCKERHUB_LOGIN/$CIRCLE_PROJECT_REPONAME:v$CIRCLE_BUILD_NUM .
 
       -run:
         name: Push to DockerHub
         command: |
           docker login -u $DOCKERHUB_LOGIN -p $DOCKERHUB_PASSWORD
-          docker push ricardomessiasferreira/api-softexpert:v$CIRCLE_BUILD_NUM
+          docker push $DOCKERHUB_LOGIN/$CIRCLE_PROJECT_REPONAME:v$CIRCLE_BUILD_NUM

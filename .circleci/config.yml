@@ -8,14 +8,14 @@ jobs:
           password: $DOCKERHUB_PASSWORD 
 
     steps:
-      -checkout
+      - checkout
 
       - run:
-          name: Build Docker Image
+          name: "Build Docker Image"
           command: docker build -t $DOCKERHUB_LOGIN/$CIRCLE_PROJECT_REPONAME:v$CIRCLE_BUILD_NUM .
 
       - run:
-          name: Push to DockerHub
+          name: "Push to DockerHub"
           command: | 
             docker login -u $DOCKERHUB_LOGIN -p $DOCKERHUB_PASSWORD
             docker push $DOCKERHUB_LOGIN/$CIRCLE_PROJECT_REPONAME:v$CIRCLE_BUILD_NUM
